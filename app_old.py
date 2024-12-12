@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-#import mysql.connector
-import bd 
+import mysql.connector
 
 # Configuración inicial
 # Se crea una instancia de la aplicación Flask. Esta instancia es el núcleo de la aplicación
@@ -16,7 +15,7 @@ app = Flask(__name__)
 db_config = {
     'host': 'localhost', # Dirección del servidor MySQL (en este caso, localhost)
     'user': 'jconde', # Usuario de la base de datos MySQL
-    'password': 'julian2023!',  # Contraseña del usuario (reemplazar con la tuya)
+    'password': 'password',  # Contraseña del usuario (reemplazar con la tuya)
     'database': 'libreria'  # Nombre de la base de datos que se va a utilizar      
 }
 
@@ -24,14 +23,9 @@ db_config = {
 # El doble asterisco (`**`) descompone el diccionario `db_config` en argumentos clave-valor.
 # Es equivalente a escribir: mysql.connector.connect(host='localhost', user='root', password='password', database='libreria').
 #Esto simplifica el código cuando hay muchos argumentos.
-#conn = mysql.connector.connect(**db_config)
-
-conn = bd.conn
-
+conn = mysql.connector.connect(**db_config)
 
 # Creación de un cursor para ejecutar consultas SQL sobre la base de datos.
-#cursor = conn.cursor()
-
 cursor = conn.cursor()
 
 # Ruta principal (portada)
