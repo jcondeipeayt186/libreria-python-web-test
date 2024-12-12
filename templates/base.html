@@ -1,0 +1,48 @@
+<!-- Define la estructura básica del documento HTML: -->
+<!DOCTYPE html> <!--indica que es un archivo HTML5.-->
+<html lang="en"> <!-- establece el idioma como inglés (puedes cambiarlo a "es" para español) -->
+<head>
+    <meta charset="UTF-8"> <!-- <meta charset="UTF-8"> especifica la codificación de caracteres como UTF-8. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> asegura que la página se renderice correctamente en dispositivos móviles. -->
+    <title>Librería</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico"> <!-- Establece el ícono de la página (favicon) que aparece en la pestaña del navegador. -->
+
+
+    <!-- Incluye el CSS de Bootstrap para estilos y sus scripts JavaScript, que permiten interactividad como menús desplegables y carruseles. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+<style>
+    /**Define una clase CSS llamada carousel-image para controlar cómo se muestran las imágenes del carrusel.**/
+    .carousel-image {
+    width: 1200px; /* Ancho fijo */
+    height: 300px; /* Alto fijo */
+    object-fit: cover; /* Escala y recorta la imagen para llenar el contenedor */
+    object-position: center; /* Centra la imagen recortada */
+}
+
+</style>
+
+    
+</head>
+<body>
+    <!-- Crea una barra de navegación usando Bootstrap, con enlaces al inicio y a la lista de libros. -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="../static/img/logo.png" alt="Logo" height="24" class="d-inline-block align-text-top">
+                Librería</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/libros">Libros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %} <!-- Esta línea no es HTML estándar, sino parte de Jinja2, el motor de plantillas que utiliza Flask. -->
+    </div>
+</body>
+</html>

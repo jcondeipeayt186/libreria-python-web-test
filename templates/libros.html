@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Libros</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro[0] }}</td>
+            <td>{{ libro[1] }}</td>
+            <td>{{ libro[2] }}</td>
+            <td>{{ libro[3] }}</td>
+            <td>${{ libro[4] }}</td>
+            <td>
+                <a href="/editar_libro/{{ libro[0] }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/eliminar_libro/{{ libro[0] }}" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<form method="POST" action="/agregar_libro" class="mt-4">
+    <h3>Agregar nuevo libro</h3>
+    <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" required>
+    </div>
+    <div class="mb-3">
+        <label for="autor" class="form-label">Autor</label>
+        <input type="text" class="form-control" id="autor" name="autor" required>
+    </div>
+    <div class="mb-3">
+        <label for="editorial" class="form-label">Editorial</label>
+        <input type="text" class="form-control" id="editorial" name="editorial" required>
+    </div>
+    <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input type="number" class="form-control" id="precio" name="precio" step="0.01" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar</button>
+</form>
+{% endblock %}
+
