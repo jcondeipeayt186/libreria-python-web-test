@@ -32,8 +32,14 @@
         <div class="container">
             <a class="navbar-brand" href="/">
                 <img src="../static/img/logo.png" alt="Logo" height="24" class="d-inline-block align-text-top">
-                Librería</a>
-            <div class="collapse navbar-collapse">
+                Librería
+            </a>
+            <!-- Botón de colapso -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menú colapsable -->
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="/libros">Libros</a></li>
@@ -41,6 +47,7 @@
             </div>
         </div>
     </nav>
+    
     <div class="container mt-4">
         {% block content %}{% endblock %} <!-- Esta línea no es HTML estándar, sino parte de Jinja2, el motor de plantillas que utiliza Flask. -->
     </div>
