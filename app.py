@@ -10,29 +10,8 @@ import bd
 #  Es esencial para inicializar la aplicación.
 app = Flask(__name__)
 
-# Conexión a MySQL
-# Configuración para conectarse a la base de datos MySQL.
-# El diccionario `db_config` almacena los parámetros necesarios para la conexión.
-db_config = {
-    'host': 'localhost', # Dirección del servidor MySQL (en este caso, localhost)
-    'user': 'jconde', # Usuario de la base de datos MySQL
-    'password': 'julian2023!',  # Contraseña del usuario (reemplazar con la tuya)
-    'database': 'libreria'  # Nombre de la base de datos que se va a utilizar      
-}
-
-# Conexión a la base de datos utilizando la configuración anterior.
-# El doble asterisco (`**`) descompone el diccionario `db_config` en argumentos clave-valor.
-# Es equivalente a escribir: mysql.connector.connect(host='localhost', user='root', password='password', database='libreria').
-#Esto simplifica el código cuando hay muchos argumentos.
-#conn = mysql.connector.connect(**db_config)
-
-conn = bd.conn
-
-
-# Creación de un cursor para ejecutar consultas SQL sobre la base de datos.
-#cursor = conn.cursor()
-
-cursor = conn.cursor()
+# Conexión a MySQL y Creación de un cursor para ejecutar consultas SQL sobre la base de datos.
+conn, cursor = bd.abrir_conexion()
 
 # Ruta principal (portada)
 # Define la ruta raíz (`/`) de la aplicación. Cuando un usuario accede a esta ruta, 
