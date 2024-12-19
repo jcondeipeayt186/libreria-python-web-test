@@ -51,5 +51,10 @@
     <div class="container mt-4">
         {% block content %}{% endblock %} <!-- Esta línea no es HTML estándar, sino parte de Jinja2, el motor de plantillas que utiliza Flask. -->
     </div>
+
+    {% block footer %}
+    <!-- Footer dinámico (si es necesario) -->
+    {% endblock %}
+
 </body>
 </html>
