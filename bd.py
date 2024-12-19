@@ -13,7 +13,8 @@ db_config = {
     'host': config('DB_HOST'),
     'user': config('DB_USER'),
     'password': config('DB_PASSWORD'),
-    'database': config('DB_NAME')
+    'database': config('DB_NAME'),
+    'connection_timeout': 300  # Tiempo en segundos
 }
 
 # Conexión a la base de datos utilizando la configuración anterior.
@@ -36,9 +37,6 @@ else:
         conn = mysql.connector.connect(**db_config)
     except mysql.connector.Error as e:
         print(f"Error al crear la conexión: {e}")  
-
-
-
 
 
 
@@ -74,6 +72,16 @@ def cerrar_conexion(conn, cursor=None):
         cursor.close()
     if conn:
         conn.close()  # Si usa Pool, Devuelve la conexión al pool sino cierra la conexion directamente
+""" 
+Si la aplicación necesita liberar todos los recursos al finalizar 
+(por ejemplo, en un shutdown controlado, un link cerrar sesión), 
+se puede recorrer todas las conexiones activas en el pool y cerrarlas manualmente
+"""
+def shutdown():
+    global pool
+    for connection in pool._cnx_queue:
+        connection.close()
+    return "Conexiones cerradas"
 
 
 """ 
