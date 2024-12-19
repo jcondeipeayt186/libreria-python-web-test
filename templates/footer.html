@@ -1,71 +1,66 @@
-<footer class="footer">
-    <style>
-      .footer {
-        background: url('https://web-production-75ac1.up.railway.app/static/img/logo.png') no-repeat center center;
-        background-size: cover;
-        color: white;
-        position: relative;
+<footer class="footer mt-5">
+  <style>
+    .footer {
+      background: url('https://web-production-75ac1.up.railway.app/static/img/logo.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      position: relative;
+    }
+
+    .footer-overlay {
+      background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo para mejorar la legibilidad */
+      padding: 20px;
+    }
+
+    .footer-logos img {
+      max-height: 80px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .footer-container .logo-container img {
+      max-width: 100%;
+      max-height: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container .col {
+        margin-bottom: 20px;
       }
-  
-      .footer-overlay {
-        background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo para mejorar la legibilidad */
-        padding: 20px;
-      }
-  
-      .footer-logos img {
-        max-height: 80px;
-      }
-  
-      .footer-text {
-        text-align: center;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-  
-      .footer-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-  
-      .footer-container .logo-container {
-        text-align: center;
-        margin: 10px 0;
-      }
-  
-      @media (max-width: 768px) {
-        .footer-container {
-          flex-direction: column;
-        }
-  
-        .footer-container .footer-text {
-          margin: 10px 0;
-        }
-      }
-    </style>
-  
-    <div class="footer-overlay">
-      <div class="container">
-        <div class="footer-container">
-          <!-- Logo del Colegio -->
-          <div class="logo-container">
-            <img src="https://web-production-75ac1.up.railway.app/static/img/logoCasta.jpg" alt="Logo Colegio Castagnari" width="80px" class="img-thumbnail rounded">
-          </div>
-  
-          <!-- Texto -->
-          <div class="footer-text">
-            <p><strong>Naty - Julián</strong> - Proyecto Aplicaciones Web - 6C<br>
-              IPEATyM 186 "Luis Dario José Castagnari" - Las Higueras - Córdoba - Argentina
-            </p>
-          </div>
-  
-          <!-- Logo adicional (si lo necesitas para algo más) -->
-          <div class="logo-container">
-            <img src="https://web-production-75ac1.up.railway.app/static/img/logo.png" alt="Logo del Proyecto" class="img-fluid">
-          </div>
+    }
+  </style>
+
+  <div class="footer-overlay">
+    <div class="container">
+      <div class="row footer-container">
+        <!-- Columna 1: Logo del Colegio -->
+        <div class="col-md-2 text-center">
+          <img src="https://web-production-75ac1.up.railway.app/static/img/logoCasta.jpg" alt="Logo Colegio Castagnari" class="img-thumbnail rounded">
+        </div>
+
+        <!-- Columna 2: Texto -->
+        <div class="col-md-4 text-center">
+          <p><strong>Naty - Julián</strong> - Proyecto Aplicaciones Web - 6C<br>
+            IPEATyM 186 "Luis Dario José Castagnari"<br>Las Higueras - Córdoba - Argentina
+          </p>
+        </div>
+
+        <!-- Columna 3: Mapa -->
+        <div class="col-md-3 text-center">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8182.09437587851!2d-64.29443675445687!3d-33.10349693194783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cdffb30cb1a365%3A0xf6ab5e324290a73e!2sEscuela%20Capitan%20Castagnari!5e0!3m2!1ses-419!2sar!4v1734635817267!5m2!1ses-419!2sar"
+               width="400" height="300" style="border:0;" allowfullscreen="" 
+               loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Columna 4: Logo adicional -->
+        <div class="col-md-3 text-center">
+          <img src="https://web-production-75ac1.up.railway.app/static/img/logo.png" alt="Logo del Proyecto" class="img-fluid">
         </div>
       </div>
     </div>
-  </footer>
-  
+  </div>
+</footer>
