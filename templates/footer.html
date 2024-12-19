@@ -1,0 +1,71 @@
+<footer class="footer">
+    <style>
+      .footer {
+        background: url('https://web-production-75ac1.up.railway.app/static/img/logo.png') no-repeat center center;
+        background-size: cover;
+        color: white;
+        position: relative;
+      }
+  
+      .footer-overlay {
+        background-color: rgba(0, 0, 0, 0.7); /* Oscurece el fondo para mejorar la legibilidad */
+        padding: 20px;
+      }
+  
+      .footer-logos img {
+        max-height: 80px;
+      }
+  
+      .footer-text {
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+  
+      .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+  
+      .footer-container .logo-container {
+        text-align: center;
+        margin: 10px 0;
+      }
+  
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+        }
+  
+        .footer-container .footer-text {
+          margin: 10px 0;
+        }
+      }
+    </style>
+  
+    <div class="footer-overlay">
+      <div class="container">
+        <div class="footer-container">
+          <!-- Logo del Colegio -->
+          <div class="logo-container">
+            <img src="https://web-production-75ac1.up.railway.app/static/img/logoCasta.png" alt="Logo Colegio Castagnari" class="img-fluid">
+          </div>
+  
+          <!-- Texto -->
+          <div class="footer-text">
+            <p><strong>Naty - Julián</strong> - Proyecto Aplicaciones Web - 6C<br>
+              IPEATyM 186 "Luis Dario José Castagnari" - Las Higueras - Córdoba - Argentina
+            </p>
+          </div>
+  
+          <!-- Logo adicional (si lo necesitas para algo más) -->
+          <div class="logo-container">
+            <img src="https://web-production-75ac1.up.railway.app/static/img/logo.png" alt="Logo del Proyecto" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
